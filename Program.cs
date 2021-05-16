@@ -12,7 +12,7 @@ namespace CS_AUTO_ACCEPT_CONSOLE
 {
     class Program
     {
-        //public static int tempcounter = 0;
+        #region Global variables
         public static bool runScanner = false;
         public static bool moveMouse = false;
         public static bool checkForCancel = false;
@@ -22,7 +22,7 @@ namespace CS_AUTO_ACCEPT_CONSOLE
         public static double _clickypos = 0;
         public static string _title = Console.Title;
         public static ImageConverter _converter = new ImageConverter();
-
+        #endregion
         #region Mouse stuff
         [DllImport("user32.dll", CharSet = CharSet.Auto, CallingConvention = CallingConvention.StdCall)]
         public static extern void mouse_event(uint dwFlags, uint dx, uint dy, uint cButtons, uint dwExtraInfo);
@@ -32,7 +32,6 @@ namespace CS_AUTO_ACCEPT_CONSOLE
         private const int MOUSEEVENTF_RIGHTDOWN = 0x08;
         private const int MOUSEEVENTF_RIGHTUP = 0x10;
         #endregion
-
         static void Main()
         {
             #region debug
@@ -83,7 +82,6 @@ namespace CS_AUTO_ACCEPT_CONSOLE
             scannerThread.Start();
             menuThread.Start();
         }
-
         /// <summary>
         /// Sharpen an image
         /// </summary>
@@ -152,7 +150,6 @@ namespace CS_AUTO_ACCEPT_CONSOLE
             }
             return sharpenImage;
         }
-
         /// <summary>
         /// Adjust the contrast of an image
         /// </summary>
@@ -210,7 +207,6 @@ namespace CS_AUTO_ACCEPT_CONSOLE
 
             return NewBitmap;
         }
-
         /// <summary>
         /// Show the menu
         /// </summary>
@@ -240,7 +236,6 @@ namespace CS_AUTO_ACCEPT_CONSOLE
                 }
             }
         }
-
         /// <summary>
         /// Main loop for running the scanner
         /// </summary>
@@ -372,7 +367,6 @@ namespace CS_AUTO_ACCEPT_CONSOLE
                 }
             }
         }
-
         /// <summary>
         /// Take a screen capture assuming the screen is in 16:9 format
         /// </summary>
