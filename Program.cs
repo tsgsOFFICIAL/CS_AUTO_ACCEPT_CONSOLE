@@ -20,7 +20,7 @@ namespace CS_AUTO_ACCEPT_CONSOLE
         public static double tempystartpos = 0;
         public static double _clickxpos = 0;
         public static double _clickypos = 0;
-        public static string _title = Console.Title;
+        public static string _title = "AutoAccept: ";
         public static ImageConverter _converter = new ImageConverter();
         #endregion
         #region Mouse stuff
